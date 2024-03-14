@@ -2,22 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.dhea.produk.entity;
+package com.dhea.order.vo;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 /**
  *
  * @author Dhea
  */
-@Entity
-@Table (name="t_produk")
 public class Produk {
-    @Id
+        @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String kode;
@@ -70,5 +66,5 @@ public class Produk {
     public String toString() {
         return "Product{" + "id=" + id + ", kode=" + kode + ", nama=" + nama + ", satuan=" + satuan + '}';
     }
+    
 }
-

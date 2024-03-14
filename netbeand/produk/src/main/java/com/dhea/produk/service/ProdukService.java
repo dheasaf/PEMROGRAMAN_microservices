@@ -18,13 +18,13 @@ import org.springframework.stereotype.Service;
 public class ProdukService {
     @Autowired
     
-    private ProdukRepository productRepository;
+    private ProdukRepository produkRepository;
     
     public List<Produk> getAll(){
-        return productRepository.findAll();
+        return produkRepository.findAll();
     }
     
-    public void insert(Produk produk){
-        productRepository.save(produk);
+    public Produk getProduk(Long id){
+        return produkRepository.findById(id).get();
     }
 }

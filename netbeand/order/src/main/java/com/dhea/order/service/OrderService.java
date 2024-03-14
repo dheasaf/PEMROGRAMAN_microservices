@@ -6,11 +6,14 @@ package com.dhea.order.service;
 
 import com.dhea.order.entity.Order;
 import com.dhea.order.repository.OrderRepository;
+import com.dhea.order.vo.Produk;
+import com.dhea.order.vo.ResponseTemplate;
 import jakarta.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -21,6 +24,9 @@ public class OrderService {
 
     @Autowired
     private OrderRepository orderRepository;
+    
+    @Autowired
+    private RestTemplate restTemplate;
 
     public List<Order> getAll() {
         return orderRepository.findAll();
@@ -54,5 +60,19 @@ public class OrderService {
         if(jumlah > 0 && order.getTotal() != total) {
             order.setTotal(total);
         }
+    }
+    public Order getOderById(Long id){
+        return orderRepository.findById(id).get();
+    }
+    
+    public List<ResponseTemplate>getOrderWithProdukById(Long id){
+        List<ResponseTemplate> responseList = new ArrayList<>();
+        Order order = getOrderById(id);
+        Produk produk = restTemplate.getForObject("http://localhost:9007/api/v1/product"+ order.getProdukId(), Produk.class);
+        ResponseTemplate vo = new ResponseTemplate();
+        vo.setOrder(order);
+        vo.setProduk(produk);
+        responseList.add(vo);
+        return responseList;
     }
 }
