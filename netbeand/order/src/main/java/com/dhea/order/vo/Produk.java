@@ -13,7 +13,7 @@ import jakarta.persistence.Id;
  * @author Dhea
  */
 public class Produk {
-        @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String kode;

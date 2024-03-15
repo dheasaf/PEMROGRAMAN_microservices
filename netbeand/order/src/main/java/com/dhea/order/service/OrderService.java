@@ -75,4 +75,8 @@ public class OrderService {
         responseList.add(vo);
         return responseList;
     }
+
+    public void update(Long id, int jumlah, String tanggal, String status) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
