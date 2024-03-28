@@ -9,13 +9,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.util.Date;
 /**
  *
  * @author dhea
  */
 @Entity
-@Table(name="dbpembayaran")
+@Table(name="t_pembayaran")
 public class Pembayaran {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
