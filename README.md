@@ -1,0 +1,1 @@
+yang sebelumnya video ke 7-8 itu di upload sebelum video ke 9 tapi malah ke upload ulang pak, terus tulisannya jadinya dua-duanya upload video ke-9. padahal satunya video ke 7-8, terus satu lagi video ke-9. mohon di maklumi ya pak
