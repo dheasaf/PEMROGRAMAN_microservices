@@ -30,6 +30,9 @@ public class ProdukService {
     public void insert(Produk produk){
         produkRepository.save(produk);
     }
-    
 
+    public void deleteProduk(Long id) {
+       produkRepository.deleteById(id);
+    }
+    
 }

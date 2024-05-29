@@ -7,6 +7,7 @@ import com.dea.produk.entity.Produk;
 import com.dea.produk.service.ProdukService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,6 +40,12 @@ public class ProdukController {
     public void insertProduk(@RequestBody Produk produk) {
         produkService.insert(produk);
     }
+       //menghapus data
+    @DeleteMapping(path = "{id}")
+    public void deleteProduk(@PathVariable("id") Long id) {
+        produkService.deleteProduk(id);
+    }
+
 
 
     
